@@ -22,11 +22,11 @@ jobs:
     - id: tags
       uses: docker/metadata-action@v4
       with:
-        images: ghcr.io/oriolrius/openvpn-client
-        tags: |
-          type=semver,pattern={{version}}
-          type=semver,pattern={{major}}.{{minor}}
-          type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
+        images: ghcr.io/${{ github.repository }}
+        # tags: |
+        #   type=semver,pattern={{version}}
+        #   type=semver,pattern={{major}}.{{minor}}
+        #   type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
 
     - id: build-args
       run: |
