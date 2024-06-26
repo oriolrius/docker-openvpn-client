@@ -1,7 +1,8 @@
 services:
   openvpn-client:
-    image: ghcr.io/wfg/openvpn-client:latest
+    image: ghcr.io/oriolrius/openvpn-client:latest
     container_name: openvpn-client
+    build: build/.
     cap_add:
       - NET_ADMIN
     devices:

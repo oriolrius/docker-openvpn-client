@@ -22,7 +22,7 @@ jobs:
     - id: tags
       uses: docker/metadata-action@v4
       with:
-        images: ghcr.io/wfg/openvpn-client
+        images: ghcr.io/oriolrius/openvpn-client
         tags: |
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}.{{minor}}
