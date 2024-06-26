@@ -24,7 +24,7 @@ jobs:
       id: docker_meta_tagged
       if: startsWith(github.ref, 'refs/tags/')
       with:
-        images: ghcr.io/${{ github.repository }}
+        images: ghcr.io/oriolrius/openvpn-client
         tags: |
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}.{{minor}}
@@ -33,7 +33,7 @@ jobs:
       uses: docker/metadata-action@v4
       if: github.event_name == 'workflow_dispatch'
       with:
-        images: ghcr.io/${{ github.repository }}
+        images: ghcr.io/oriolrius/openvpn-client
         # tags: |
         #   type=semver,pattern={{version}}
         #   type=semver,pattern={{major}}.{{minor}}
