@@ -34,10 +34,7 @@ jobs:
       if: github.event_name == 'workflow_dispatch'
       with:
         images: ghcr.io/${{ github.repository }}
-        # tags: |
-        #   type=semver,pattern={{version}}
-        #   type=semver,pattern={{major}}.{{minor}}
-        #   type=semver,pattern={{major}},enable=${{ !startsWith(github.ref, 'refs/tags/v0.') }}
+        tags: ${{ github.ref_name }}
 
     - id: build-args
       run: |
