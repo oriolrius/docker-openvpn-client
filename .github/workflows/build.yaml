@@ -34,7 +34,6 @@ jobs:
       if: github.event_name == 'workflow_dispatch'
       with:
         images: ghcr.io/${{ github.repository }}
-        tags: ${{ github.ref_name }}
 
     - id: build-args
       run: |
