@@ -54,5 +54,5 @@ jobs:
         build-args: |
           BUILD_DATE=${{ steps.build-args.outputs.date }}
           IMAGE_VERSION=${{ steps.build-args.outputs.version }}
-        tags: ${{ steps.docker_meta.outputs.tags  steps.docker_meta_auto_main.outputs.tags  steps.docker_meta_manual_branch.outputs.tags || steps.docker_meta_tagged.outputs.tags }}
+        tags: ${{ steps.docker_meta.outputs.tags || steps.docker_meta_auto_main.outputs.tags || steps.docker_meta_manual_branch.outputs.tags || steps.docker_meta_tagged.outputs.tags }}
         push: true
